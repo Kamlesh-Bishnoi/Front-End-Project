@@ -1,0 +1,140 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+.div {
+    background-color: #333;
+    overflow: hidden;
+}
+h1{color:#4CAF50;}
+
+#topslab{
+    font-style: normal;
+    font-weight: 100;
+    border-radius:5%;
+    display: block;
+    background-color: #fff;
+    width: 800px;
+    height:450px;
+    border:2px solid #000;
+    box-shadow:10px 10px 5px #000;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: 20%;
+    margin-top:2%;
+}
+#h1{
+    text-align:center;
+    font-size:30px;
+}
+#button{
+margin-left:1%;
+outline:none;
+  border-radius:10px;
+  width:100px;
+  height:40px;
+  border:2px solid #fff;
+  background-color:#001f3f;
+  color:#fff;
+  font-weight:bold;
+  border-bottom-width:4px;
+}
+#t5{
+    width:250px;
+    height:100px;
+    text-align:top;
+}
+.demo {
+    background-color:black; 
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+<div class="div">
+<h1 ><center>A. D. P &nbsp&nbspNEWS</center></h1>
+</div>
+<div id=topslab>
+<form id="f1" name="myform" action="Feedback1.html">
+<h1 id="h1">Feedback &nbspForm</h1>
+</br></br>
+<h style="margin-left:20px;font-family:Arial;font-size:18px" >Your Name :&nbsp<input  size="30" id="t1" type="name" placeholder="Enter Name " required=""></h>
+<h style="margin-left:50px;font-family:Arial;font-size:18px" >Your Email :&nbsp<input  size="30" id="t2" type="text"  name="email" placeholder="Enter Email " required=""></h>
+</br></br><br>
+<h style="margin-left:20px;font-family:Arial;font-size:18px">Do you like our Online News Portal &nbsp<u>A.D.P &nbspNews</u> :&nbsp</h>
+<h style="margin-left:20px;font-family:Arial;font-size:15px" ><input id="t3" type="radio" name="yn">Yes</h>
+<h style="margin-left:50px;font-family:Arial;font-size:15px" ><input id="t3" type="radio" name="yn">No</h>
+<br><br><br>
+<h style="margin-left:20px;font-family:Arial;font-size:18px">For which page you want to give Feedback :&nbsp&nbsp&nbsp&nbsp</h>
+<select id="t4">
+  <option value="0">Select &nbspPage</option>
+  <option value="1">Home</option>
+  <option value="2">Sports &nbspNews</option>
+  <option value="3">International &nbspNews</option>
+  <option value="4">Entertainment</option>
+  <option value="5">Business &nbspNews</option>
+  <option value="6">Technical &nbspNews</option>
+  <option value="7">Services</option>
+  <option value="8">About</option>
+  <option value="9">Contact &nbspUs</option>
+  <option value="10">All</option>
+</select>
+<br><br><br>
+<!-- <h style="margin-left:20px;font-family:Arial;font-size:18px" >Comments :&nbsp<input id="t5" type="text" placeholder="Enter your Feedback" required=""></h> -->
+<h style="margin-left:20px;font-family:Arial;font-size:18px" >Comments :&nbsp<textarea  id="t5" type="text" placeholder="Enter your Feedback" required=""></textarea> </h>
+<h style="margin-left:35px;font-family:Arial;font-size:18px" >Rate Website :&nbsp</h>
+<h style="margin-left:12px;font-family:Arial;font-size:15px" ><input id="t6" type="radio" name="rate" value="bad">Bad</h>
+<h style="margin-left:15px;font-family:Arial;font-size:15px" ><input id="t6" type="radio" name="rate" value="average">Average</h>
+<h style="margin-left:15px;font-family:Arial;font-size:15px" ><input id="t6" type="radio" name="rate" value="good">Good</h>
+<br><br>
+<center><button  id="button" onclick="validate()">Submit<b style="font-family:Arial;font-size:15px"></b></center></button></form>s
+</div>  
+<script>
+function validate()
+{
+    if(document.getElementById("t1").value=="")
+    {
+        alert("Please Provide your Name! ");
+        document.getElementById("t1").focus();
+        return false;
+    }
+
+    var x=document.myform.email.value;
+    var atposition=x.indexOf("@");
+    var dotpositon=x.lastIndexOf(".");
+    if(document.getElementById("t2").value==""||atposition<1||dotpositon<atposition+2||dotpositon+2>x.length)
+    {
+        alert("Please Provide your Email Correctly ! ");
+        document.getElementById("t2").focus();
+        return false;
+    }
+
+    if(document.getElementById("t3").checked=="")
+    {
+        alert("Please Select your Option! ");
+        document.getElementById("t3").focus();
+        return false;
+    }
+
+    if(document.getElementById("t4").value=="")
+    {
+        alert("Please Select your Option! ");
+        document.getElementById("t4").focus();
+        return false;
+    }
+    if(document.getElementById("t5").value=="")
+    {
+        alert("Please Provide your Feedback! ");
+        document.getElementById("t5").focus();
+        return false;
+    }
+}
+</script>
+<br><br>
+<div class="demo">
+<center><footer><font color="white">&copy; Copyright 2018 A.D.P News.com</font></footer></center>
+</div>  
+</body>
+</html>
