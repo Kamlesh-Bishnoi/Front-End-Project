@@ -7,8 +7,7 @@
     overflow: hidden;
 }
 h1{color:#4CAF50;}
-
-#topslab{
+ #topslab{
     font-style: normal;
     font-weight: 100;
     border-radius:5%;
@@ -64,7 +63,7 @@ outline:none;
 <center><h style="margin-left:-20px;font-family:Arial;font-size:19px">Confirm Password :&nbsp&nbsp<input id="t4" type="Password" placeholder="**********" required=""></h></center>
 </br>
 </br></br>
-<center><button  id="button" onclick="validate()">Sign Up<b style="font-family:Arial;font-size:15px"></b></center></button></form>
+<center><button  id="button" onclick="return validate()">Sign Up<b style="font-family:Arial;font-size:15px"></b></center></button></form>
 </br>
 </form>
 </div>
@@ -77,8 +76,7 @@ function validate()
         document.getElementById("t1").focus();
         return false;
     }
-
-    var x=document.myform.email.value;
+     var x=document.myform.email.value;
     var atposition=x.indexOf("@");
     var dotpositon=x.lastIndexOf(".");
     if(document.getElementById("t2").value==""||atposition<1||dotpositon<atposition+2||dotpositon+2>x.length)
@@ -87,20 +85,20 @@ function validate()
         document.getElementById("t2").focus();
         return false;
     }
-
-
-    if(document.getElementById("t3").value=="")
-    {
+     if(document.getElementById("t3").value==""){
         alert("Please Provide your Password! ");
         document.getElementById("t3").focus();
         return false;
     }
-    if(document.getElementById("t3").value!=document.getElementById("t4").value)
+    var password = document.getElementById("t3").value;
+    var con_password = document.getElementById("t4").value;
+    if(con_password != password)
     {
         alert("Please Confirm your Password Correctly! ");
         document.getElementById("t4").focus();
         return false;
     }
+    return true;
 }
 </script>
 <br><br><br>
